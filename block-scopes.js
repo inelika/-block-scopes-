@@ -1,14 +1,21 @@
-let globalVariable = "Я глобальная переменная!"; 
+var globalVariable = "Я глобальная переменная!"; 
   console.log(globalVariable);
-function blockscopes() {
-
+function func () {
+  
   var functionVariable = "Я существую только в этой функции!";
   console.log(functionVariable);
+  console.log(globalVariable);
   {
-    let blockVariable = "Я существую только в этом блоке!";
-    const anotherBlockVariable = "Я тоже существую в этом блоке!";
+    var blockVariable = "Я существую только в этом блоке!";
     console.log(blockVariable);
-    console.log(anotherBlockVariable);
+    console.log(functionVariable);
+    console.log(globalVariable);
+
   }
+  console.log(functionVariable);
+  //console.log(blockVariable); error 
 }
-blockscopes();
+console.log(globalVariable);
+//console.log(blockVariable); eroor
+// console.log(functionVariable); eroor
+func();
